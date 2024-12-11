@@ -1,4 +1,6 @@
 const Ingrediente = require('../models/ingrediente');
+const { Op } = require('sequelize');
+
 
 // Obtener todos los ingredientes
 exports.getAll = async (req, res) => {
@@ -83,3 +85,33 @@ exports.delete = async (req, res) => {
     res.status(500).json({ message: 'Error deleting data', error: error.message });
   }
 };
+
+exports.searchIngrediente = async (req, res) => {
+  try {
+    const searchTerm = req.query.p; // Capturar el término de búsqueda desde 'p'
+
+    // Validar que el parámetro sea válido
+    if (!searchTerm || typeof searchTerm !== 'string' || !searchTerm.trim()) {
+      return res.status(400).json({ message: 'Invalid search term. Provide a valid string for the "p" query parameter.' });
+    }
+
+    // Realizar la consulta usando LIKE (insensible a mayúsculas/minúsculas)
+    const ingredientes = await Ingrediente.findAll({
+      where: {
+        Nombre: {
+          [Op.like]: `%${searchTerm.trim()}%`, // Buscar ingredientes cuyo nombre contenga el término
+        },
+      },
+    });
+
+    // Responder con los resultados
+    res.status(200).json(ingredientes);
+  } catch (error) {
+    console.error('Error buscando ingrediente:', error);
+    res.status(500).json({ message: 'Error fetching data', error: error.message });
+  }
+};
+
+
+
+

@@ -1,5 +1,7 @@
 const Receta = require('../models/receta');
 const axios = require('axios'); // Usaremos axios para llamar al endpoint
+const { Op } = require('sequelize');
+
 
 // **1. Obtener todas las recetas**
 exports.getAllRecetas = async (req, res) => {
@@ -92,7 +94,6 @@ exports.deleteReceta = async (req, res) => {
   }
 };
 
-const { Op } = require('sequelize');
 
 exports.searchRecetas = async (req, res) => {
   try {
