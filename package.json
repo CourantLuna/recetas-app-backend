@@ -1,0 +1,23 @@
+{
+  "name": "recetas-app-backend",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000r\u0000e\u0000c\u0000e\u0000t\u0000a\u0000s\u0000-\u0000a\u0000p\u0000p\u0000-\u0000b\u0000a\u0000c\u0000k\u0000e\u0000n\u0000d\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "set NODE_ENV=production&& node server.js",
+    "dev": "set NODE_ENV=development&& node server.js",
+    "qas": "set NODE_ENV=qas&& node server.js",
+    "prod": "set NODE_ENV=production&& node server.js"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "sequelize": "^6.37.5",
+    "tedious": "^18.6.1"
+  }
+}
