@@ -9,12 +9,12 @@
     "dev": "set NODE_ENV=development&& node server.js",
     "qas": "set NODE_ENV=qas&& node server.js",
     "prod": "set NODE_ENV=production&& node server.js"
-
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.7.9",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "sequelize": "^6.37.5",

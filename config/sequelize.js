@@ -1,5 +1,5 @@
 const { Sequelize } = require('sequelize');
-const config = require('../config/db');
+const config = require('./db.js');
 
 // Configuración de Sequelize usando variables (.ENV) importadas desde config.js
 const sequelize = new Sequelize(config.DB.DATABASE, config.DB.USER, config.DB.PASSWORD, {
