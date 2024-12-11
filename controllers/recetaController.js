@@ -69,7 +69,7 @@ exports.deleteReceta = async (req, res) => {
     }
 
     // Llamar al endpoint de receta-ingredientes para eliminar los ingredientes vinculados
-    const recetaIngredientesEndpoint = `http://127.0.0.1:3001/api/recetaingredientes/receta/${id}`;
+    const recetaIngredientesEndpoint = `http://localhost:3001/api/recetaingredientes/receta/${id}`;
     try {
       const recetaIngredientesResponse = await axios.delete(recetaIngredientesEndpoint);
       console.log(recetaIngredientesResponse.data.message); // Log de éxito o mensaje relacionado

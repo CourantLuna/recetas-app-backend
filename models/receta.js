@@ -70,6 +70,7 @@ const Receta = sequelize.define('Receta', {
   ImageUrl: {
     type: DataTypes.STRING, // Usamos STRING porque almacenamos una URL
     allowNull: true, // Puede ser NULL si no se proporciona
+    defaultValue: "https://via.placeholder.com/800x400",
   },
 }, {
   tableName: 'Recetas', // Nombre de la tabla en la base de datos
