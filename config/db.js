@@ -27,6 +27,7 @@ module.exports = {
   NODE_ENV: process.env.NODE_ENV,
   HOST: process.env.HOST ,
   PORT: process.env.PORT,
+  JWT_SECRET: process.env.JWT_SECRET,
   DB: {
     SERVER: process.env.DB_SERVER ,
     DATABASE: process.env.DB_DATABASE,

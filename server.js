@@ -1,14 +1,22 @@
 const config = require('./config/db.js');
 const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const recetaRoutes = require('./routes/recetaRoutes');
 const recetaIngredienteRoutes = require('./routes/recetaIngredienteRoutes');
 const ingredienteRoutes = require('./routes/ingredienteRoutes');
 const searchRoutes = require('./routes/searchRoutes');
+const authRoutes = require('./routes/authRoutes');
+
 
 const app = express();
 // Middleware para parsear JSON
 app.use(express.json());
+
+app.use(bodyParser.json());
+app.use(cors());
+app.use('/api/auth', authRoutes);
 
 // Rutas
 app.use('/api/recetas', recetaRoutes);

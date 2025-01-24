@@ -20,5 +20,6 @@ const sequelize = new Sequelize(config.DB.DATABASE, config.DB.USER, config.DB.PA
     console.error('Error al conectar con la base de datos:', error);
   }
 })();
+console.log("Configuración cargada:", module.exports);
 
 module.exports = sequelize;
